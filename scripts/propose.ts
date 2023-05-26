@@ -34,7 +34,7 @@ export async function startPropose(
     console.log("Proposal state 1", state)
 
     if (developmentChains.includes(network.name)) {
-        await moveBlocks(VOTING_DELAY + 5)
+        await moveBlocks(VOTING_DELAY + 1)
     }
 
     // events[0] becaues it´s the first argument from the emitted event from governor.propose
@@ -45,7 +45,7 @@ export async function startPropose(
     fs.writeFileSync(PROPOSALS_FILE, JSON.stringify(proposals))
 
     if (developmentChains.includes(network.name)) {
-        await moveBlocks(2)
+        await moveBlocks(1)
     }
 
     state = await governor.state(proposalId)
