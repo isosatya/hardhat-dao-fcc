@@ -13,8 +13,8 @@ const deployGovernorContract: DeployFunction = async function (hre: HardhatRunti
     const args = [
         governaceToken.address,
         timeLock.address,
-        VOTING_PERIOD,
         VOTING_DELAY,
+        VOTING_PERIOD,
         QUORUM_PERCENTAGE,
     ]
 

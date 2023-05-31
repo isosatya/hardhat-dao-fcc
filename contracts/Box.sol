@@ -13,4 +13,8 @@ contract Box is Ownable {
 
         emit ValueChange(newValue);
     }
+
+    function retrieve() public view returns (uint256) {
+        return value;
+    }
 }
